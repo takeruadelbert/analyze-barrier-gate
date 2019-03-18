@@ -9,11 +9,12 @@ if __name__ == "__main__" :
         path = input("Input Folder Path : ")
         log_files = glob.glob(path + "/*.txt")
         if log_files:
+            log_files.sort()
             tk = TKHelper()
             str_dt_format = '%Y-%m-%d %H:%M:%S.%f'
             try:
                 for file in log_files:
-                    print("*************************************************")
+                    print("\n*************************************************")
                     print("File Name :", file)
                     print("*************************************************")
                     with open(file) as fn:
