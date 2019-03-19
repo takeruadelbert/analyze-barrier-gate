@@ -90,7 +90,6 @@ if __name__ == "__main__" :
                             line_count += 1
                             
                         # Convert to Pandas Data
-#                        tk.PrintDataResult(result_reverse_state_change_inductor1)
                         panda_data = {
                                 'Open Close Gate': pd.Series(result_gate_open_close),
                                 'State Change (True -> False) of First Inductor': pd.Series(result_state_change_inductor1),
