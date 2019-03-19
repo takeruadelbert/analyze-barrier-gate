@@ -54,27 +54,24 @@ if __name__ == "__main__" :
                             if output == "Inductor 1 state: True.":
                                 data_dt_induc1_state_true = datetime.strptime(dt, str_dt_format)
                                 if data_dt_induc1_state_false != "":
-                                    reverse_data_induc1_dt_diff = data_dt_induc1_state_true - data_dt_induc1_state_false
-                                    if str(reverse_data_induc1_dt_diff) == "-1 day, 23:44:48.665724":
-                                        print(data_dt_induc1_state_true)
-                                        print(data_dt_induc1_state_false)
+                                    reverse_data_induc1_dt_diff = abs(data_dt_induc1_state_true - data_dt_induc1_state_false)
                                     temp_reverse_state_change_inductor1.append(reverse_data_induc1_dt_diff)
                             if output == "Inductor 1 state: False.":
                                 if data_dt_induc1_state_true != "":
                                     data_dt_induc1_state_false = datetime.strptime(dt, str_dt_format)
-                                    data_induc1_dt_diff = data_dt_induc1_state_false - data_dt_induc1_state_true
+                                    data_induc1_dt_diff = abs(data_dt_induc1_state_false - data_dt_induc1_state_true)
                                     result_state_change_inductor1.append(data_induc1_dt_diff)
                                 
                             # For State Change on Second Inductor
                             if output == "Inductor 2 state: True.":
                                 data_dt_induc2_state_true = datetime.strptime(dt, str_dt_format)
                                 if data_dt_induc2_state_false != "":
-                                    reverse_data_induc2_dt_diff = data_dt_induc2_state_true - data_dt_induc2_state_false
+                                    reverse_data_induc2_dt_diff = abs(data_dt_induc2_state_true - data_dt_induc2_state_false)
                                     temp_reverse_state_change_inductor2.append(reverse_data_induc2_dt_diff)
                             if output == "Inductor 2 state: False.":
                                 if data_dt_induc2_state_true != "":
                                     data_dt_induc2_state_false = datetime.strptime(dt, str_dt_format)
-                                    data_induc2_dt_diff = data_dt_induc2_state_false - data_dt_induc2_state_true
+                                    data_induc2_dt_diff = abs(data_dt_induc2_state_false - data_dt_induc2_state_true)
                                     result_state_change_inductor2.append(data_induc2_dt_diff)
                                     
                             # For Reverse State Change on First and Second Inductor (False -> True)
